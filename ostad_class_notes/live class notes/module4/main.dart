@@ -26,3 +26,4 @@ void main(List<String> args) {
   payment2.cashIn(500);
   payment2.cashOut(1000);
 }
+

@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:test_project/module_8/c2_dashboard.dart';
 import 'package:test_project/module_8/c2_form.dart';
 import 'package:test_project/module_8/c3_container.dart';
 import 'package:test_project/module_8/c3_grid.dart';
 import 'package:test_project/module_9/c1_theme.dart';
+import 'package:test_project/module_9/c2_flist.dart';
+import 'package:test_project/module_9/c2_stack.dart';
 import 'package:test_project/theme/app_theme.dart';
 import 'home.dart';
 import 'module_7/c2_button.dart';
@@ -24,10 +27,20 @@ class MyApp extends StatelessWidget {
       // home: LogInPage(), //Forms (Module 8)
       // home: Class3(), //Container (Module 8)
       // home: GridV(), //Grid View (Module 8)
-      //home: ThemeTest(), //Theme (Module 9) check theme folder
+      
+      home: ThemeTest(), //Theme (Module 9) check theme folder
+      initialRoute: '/login',
       
       theme: AppTheme.lightTheme,
       darkTheme: AppTheme.darkTheme,
+      routes: {
+        '/home': (context) => Home(),
+        '/buttons': (context) => ButtonGrp(),
+        '/login': (context) => LogInPage(),
+        '/dashboard': (context) => DashBoard(),
+        '/list': (context) => Flist(),
+        '/stack': (context) => C2Stack()
+      },
 
       themeMode: ThemeMode.light,
 

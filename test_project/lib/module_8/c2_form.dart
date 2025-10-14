@@ -104,17 +104,48 @@ class LogInPage extends StatelessWidget {
                       child: Text('Submit')
                       ),
                   ),
+
                   ElevatedButton(
                     onPressed: (){
                       Navigator.push(context, MaterialPageRoute(builder: (context)=>HomeTwo()));
                     }, 
                   child: Text('Home2')
                   ),
+
+                  // ElevatedButton(
+                  //   onPressed: (){
+                  //     Navigator.push(context, MaterialPageRoute(builder: (context)=>DashBoard(phone: phoneController.text)));
+                  //   }, 
+                  // child: Text('DashBoard')
+                  // ),
+
                   ElevatedButton(
                     onPressed: (){
-                      Navigator.push(context, MaterialPageRoute(builder: (context)=>DashBoard(phone: phoneController.text)));
+                      Navigator.pushReplacementNamed(context, '/buttons');
                     }, 
-                  child: Text('DashBoard')
+                  child: Text('Btns')
+                  ),
+
+                  ElevatedButton(
+                    onPressed: (){
+                      Navigator.pushReplacementNamed(context, '/dashboard', arguments: {
+                        'phone': phoneController.text,
+                        'name': 'Foyez'
+                      });
+                    }, 
+                  child: Text('Dashboard')
+                  ),
+                  ElevatedButton(
+                    onPressed: (){
+                      Navigator.pushReplacementNamed(context, '/list');
+                    }, 
+                  child: Text('List View')
+                  ),
+                  ElevatedButton(
+                    onPressed: (){
+                      Navigator.pushReplacementNamed(context, '/stack');
+                    }, 
+                  child: Text('Stack')
                   ),
                 ],
               ),

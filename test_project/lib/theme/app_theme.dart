@@ -46,8 +46,11 @@ class AppTheme {
         // scaffoldBackgroundColor: const Color.fromARGB(255, 212, 211, 211)
         
   );
+
   static final ThemeData darkTheme = ThemeData(
         primaryColor: Colors.purple,
+        brightness: Brightness.dark,
+        
         elevatedButtonTheme: ElevatedButtonThemeData(
           style: ElevatedButton.styleFrom(
             backgroundColor: Colors.purple,
