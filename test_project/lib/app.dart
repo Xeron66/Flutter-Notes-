@@ -5,7 +5,8 @@ import 'package:test_project/module_8/c3_container.dart';
 import 'package:test_project/module_8/c3_grid.dart';
 import 'package:test_project/module_9/c1_theme.dart';
 import 'package:test_project/module_9/c2_flist.dart';
-import 'package:test_project/module_9/c2_stack.dart';
+import 'package:test_project/module_9/c2.3_stack.dart';
+import 'package:test_project/module_9/c3_own_widget.dart';
 import 'package:test_project/theme/app_theme.dart';
 import 'home.dart';
 import 'module_7/c2_button.dart';
@@ -13,7 +14,7 @@ import 'module_8/c1_input.dart';
 import 'theme/app_theme.dart';
 
 class MyApp extends StatelessWidget {
-  MyApp({super.key});
+  const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -39,7 +40,8 @@ class MyApp extends StatelessWidget {
         '/login': (context) => LogInPage(),
         '/dashboard': (context) => DashBoard(),
         '/list': (context) => Flist(),
-        '/stack': (context) => C2Stack()
+        '/stack': (context) => C2Stack(),
+        '/widget': (context) => OwnWidget()
       },
 
       themeMode: ThemeMode.light,

@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'widgets/city_card.dart';
+
+// Note: 2.3 means, previous class 2, and also used on class 3
 
 class C2Stack extends StatelessWidget {
   const C2Stack({super.key});
@@ -12,6 +15,11 @@ class C2Stack extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
+
+            CityCard(img: 'https://t4.ftcdn.net/jpg/01/36/15/53/360_F_136155386_TLEQLB3GqiSSKDpjcdZqAjLYaxQPCvrV.jpg', title: 'Bangladesh', rating: '5.0',),
+
+            SizedBox(height: 10,),
+
             Stack(
               children: [
                 Container(color: Colors.red, height: 200, width: 200),
@@ -75,3 +83,5 @@ class C2Stack extends StatelessWidget {
     );
   }
 }
+
+

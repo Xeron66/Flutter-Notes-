@@ -8,7 +8,7 @@ class LogInPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final _formKey = GlobalKey<FormState>();
+    final formKey = GlobalKey<FormState>();
     TextEditingController phoneController = TextEditingController();
     TextEditingController passWordController = TextEditingController();
 
@@ -26,7 +26,7 @@ class LogInPage extends StatelessWidget {
           Text('Log in with phone and password'),
 
           Form(
-            key: _formKey,
+            key: formKey,
             child: Padding(
               padding: const EdgeInsets.all(10),
               child: Column(
@@ -95,7 +95,7 @@ class LogInPage extends StatelessWidget {
                         foregroundColor: Colors.white
                       ),
                       onPressed: (){
-                        if (_formKey.currentState!.validate()){
+                        if (formKey.currentState!.validate()){
                           Navigator.pushReplacement(
                             context, 
                             MaterialPageRoute(builder: (context)=> Home()));
@@ -146,6 +146,12 @@ class LogInPage extends StatelessWidget {
                       Navigator.pushReplacementNamed(context, '/stack');
                     }, 
                   child: Text('Stack')
+                  ),
+                  ElevatedButton(
+                    onPressed: (){
+                      Navigator.pushReplacementNamed(context, '/widget');
+                    }, 
+                  child: Text('Widget')
                   ),
                 ],
               ),
