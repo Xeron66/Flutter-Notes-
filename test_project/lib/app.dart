@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:test_project/module_11/class2.dart';
+import 'package:test_project/module_12/c1.dart';
 import 'package:test_project/module_8/c2_dashboard.dart';
 import 'package:test_project/module_8/c2_form.dart';
 import 'package:test_project/module_8/c3_container.dart';
@@ -43,7 +44,8 @@ class MyApp extends StatelessWidget {
         '/list': (context) => Flist(),
         '/stack': (context) => C2Stack(),
         '/widget': (context) => OwnWidget(),
-        '/to-do': (context) => ToDo()
+        '/to-do': (context) => ToDo(),
+        '/state-class': (context) => StateClass()
       },
 
       themeMode: ThemeMode.light,

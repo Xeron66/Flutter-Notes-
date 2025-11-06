@@ -160,6 +160,12 @@ class LogInPage extends StatelessWidget {
                       }, 
                     child: Text('ToDo')
                     ),
+                    ElevatedButton(
+                      onPressed: (){
+                        Navigator.pushReplacementNamed(context, '/state-class');
+                      }, 
+                    child: Text('State Class')
+                    ),
                   ],
                 ),
               ),

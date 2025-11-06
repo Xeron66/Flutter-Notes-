@@ -8,6 +8,9 @@ class ToDo extends StatefulWidget {
 }
 
 class _ToDoState extends State<ToDo> {
+
+  // Controllers
+  // ------------------------------------------------------------
   TextEditingController taskController = TextEditingController();
   List <String> tasks = [];
 
@@ -63,6 +66,8 @@ class _ToDoState extends State<ToDo> {
       )
     );
   }
+
+  // ------------------------------------------------------------
 
   @override
   Widget build(BuildContext context) {
