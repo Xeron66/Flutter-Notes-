@@ -166,6 +166,12 @@ class LogInPage extends StatelessWidget {
                       }, 
                     child: Text('State Class')
                     ),
+                    ElevatedButton(
+                      onPressed: (){
+                        Navigator.pushReplacementNamed(context, '/state-life-cycle');
+                      }, 
+                    child: Text('State Life Cycle')
+                    ),
                   ],
                 ),
               ),

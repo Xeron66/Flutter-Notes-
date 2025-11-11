@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:test_project/module_11/class2.dart';
-import 'package:test_project/module_12/c1.dart';
+import 'package:test_project/module_11/c2_ToDo_app.dart';
+import 'package:test_project/module_12/c1_state_management.dart';
+import 'package:test_project/module_12/c2_state_life_cycle.dart';
+import 'package:test_project/module_12/c3_calculator/c3_calculator.dart';
 import 'package:test_project/module_8/c2_dashboard.dart';
 import 'package:test_project/module_8/c2_form.dart';
 import 'package:test_project/module_8/c3_container.dart';
@@ -31,8 +33,8 @@ class MyApp extends StatelessWidget {
       // home: Class3(), //Container (Module 8)
       // home: GridV(), //Grid View (Module 8)
       
-      home: LogInPage(), //Theme (Module 9) check theme folder
-      initialRoute: '/login',
+      home: Calculator(), //Theme (Module 9) check theme folder
+      initialRoute: '/calculator',
       
       theme: AppTheme.lightTheme,
       darkTheme: AppTheme.darkTheme,
@@ -45,7 +47,9 @@ class MyApp extends StatelessWidget {
         '/stack': (context) => C2Stack(),
         '/widget': (context) => OwnWidget(),
         '/to-do': (context) => ToDo(),
-        '/state-class': (context) => StateClass()
+        '/state-class': (context) => StateClass(),
+        '/state-life-cycle': (context) => LifeCycle(),
+        '/calculator': (context) => Calculator()
       },
 
       themeMode: ThemeMode.light,
