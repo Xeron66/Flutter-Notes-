@@ -1,7 +1,4 @@
-import 'dart:convert';
-
 import 'package:flutter/material.dart';
-import 'package:http/http.dart' as http;
 import 'package:test_project/module_13/CRUD/controller/product_controller.dart';
 import 'package:test_project/module_13/CRUD/model/product_model.dart';
 
@@ -28,7 +25,7 @@ class _C2ApiCallState extends State<C2ApiCall> {
     if (mounted) setState(() {});
   }
   
-  productDialog() {
+  productDialog(String label) {
     TextEditingController productNameController = TextEditingController();
     TextEditingController productImageController = TextEditingController();
     TextEditingController productQuantityController = TextEditingController();
@@ -36,7 +33,7 @@ class _C2ApiCallState extends State<C2ApiCall> {
     TextEditingController productTotalPriceController = TextEditingController();
     
     showDialog(context: context, builder: (context) => AlertDialog(
-      title: Text('Add Product'),
+      title: Text(label),
       content: SingleChildScrollView(
         child: Column(
           children: [
@@ -124,7 +121,7 @@ class _C2ApiCallState extends State<C2ApiCall> {
       // ---------- Floating Action Button ----------
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          productDialog();
+          productDialog('Add Product');
         },child: Icon(Icons.add),
       ),
 
@@ -164,13 +161,13 @@ class _C2ApiCallState extends State<C2ApiCall> {
                   children: [
                     IconButton(
                       onPressed: (){
-                        productDialog();
+                        productDialog('Update Product');
                       }, 
                       icon: Icon(Icons.edit, color: Colors.orange,)
                     ),
                     IconButton(
                       onPressed: () async {
-                        await ProductController.deleteProduct(item.sId.toString()).then((value) async {
+                        await ProductController().deleteProduct(item.sId.toString()).then((value) async {
                           if (value) {
                             await fetchData();
                             ScaffoldMessenger.of(context).showSnackBar(
