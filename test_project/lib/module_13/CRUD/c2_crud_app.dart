@@ -25,7 +25,7 @@ class _C2ApiCallState extends State<C2ApiCall> {
     if (mounted) setState(() {});
   }
   
-  productDialog(String label) {
+  productDialog(String label, Data? item) {
     TextEditingController productNameController = TextEditingController();
     TextEditingController productImageController = TextEditingController();
     TextEditingController productQuantityController = TextEditingController();
@@ -88,15 +88,27 @@ class _C2ApiCallState extends State<C2ApiCall> {
                 ),
                 ElevatedButton(
                   onPressed: () async {
-                    productController.createProduct(Data(
+                    label == 'Add Product' 
+                    // using ternary operator to select 
+                    // whether its gonna be update or create
+                    ? await productController.createProduct(Data(
                       productName: productNameController.text,
                       img: productImageController.text,
                       qty: int.parse(productQuantityController.text),
                       unitPrice: int.parse(productUnitPriceController.text),
                       totalPrice: int.parse(productTotalPriceController.text)
+                    ))
+                    : await productController.updateProduct(Data(
+                      sId: item?.sId,
+                      productName: productNameController.text,
+                      img: productImageController.text,
+                      qty: int.tryParse(productQuantityController.text),
+                      unitPrice: int.tryParse(productUnitPriceController.text),
+                      totalPrice: int.tryParse(productTotalPriceController.text)
                     ));
+
                     await fetchData();
-                    Navigator.pop(context); 
+                    if (mounted) Navigator.pop(context); 
                   }, 
                   child: Text('Save')
                 )
@@ -121,7 +133,7 @@ class _C2ApiCallState extends State<C2ApiCall> {
       // ---------- Floating Action Button ----------
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          productDialog('Add Product');
+          productDialog('Add Product', null);
         },child: Icon(Icons.add),
       ),
 
@@ -161,7 +173,7 @@ class _C2ApiCallState extends State<C2ApiCall> {
                   children: [
                     IconButton(
                       onPressed: (){
-                        productDialog('Update Product');
+                        productDialog('Update Product', item);
                       }, 
                       icon: Icon(Icons.edit, color: Colors.orange,)
                     ),
